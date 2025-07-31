@@ -1,0 +1,14 @@
+.contact-container {
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.contact-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

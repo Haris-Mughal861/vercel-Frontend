@@ -1,0 +1,79 @@
+.banner_slider_wrapper {
+  max-width: 1200px;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.banner_slide {
+   position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.banner_background {
+   height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.banner_overlay {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_content_new {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.banner_content_new h2 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.banner_content_new p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.banner_button {
+  font-weight: bold;
+  padding: 10px 24px;
+  background-color: #ff5722 !important;
+  color: white !important;
+  transition: background-color 0.3s ease;
+}
+
+.banner_button:hover {
+  background-color: #e64a19 !important;
+}
+
+/* Dots styling */
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: orange;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

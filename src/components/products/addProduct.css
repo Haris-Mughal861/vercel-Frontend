@@ -1,0 +1,25 @@
+.add_product_detail{
+    width: 100%;
+    resize: none;
+    padding: 1rem;
+    outline: none;
+    border-color: #ccc;
+    border-radius: 4px;
+    &:focus{
+        border-color: blue;
+    }
+}
+
+.add_product_header,
+.add_product_actions{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+
+}
+.add_product_main{
+    padding: 2rem;
+
+
+}

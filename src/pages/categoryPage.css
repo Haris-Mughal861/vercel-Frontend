@@ -1,0 +1,9 @@
+.category_page_container {
+  padding: 2rem;
+}
+
+.category_product_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}

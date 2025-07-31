@@ -1,0 +1,77 @@
+
+
+.admin-dashboard-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-dashboard-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.admin-dashboard-container ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.admin-dashboard-container ul li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.admin-dashboard-container ul li a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.admin-dashboard-container ul li a:hover {
+  text-decoration: underline;
+}
+
+.admin-dashboard-container .MuiButton-root {
+  text-transform: none;
+  font-weight: 600;
+}
+
+.admin-dashboard-container .custom-modal {
+  padding: 2rem;
+}
+
+.admin-dashboard-container .custom-modal input,
+.admin-dashboard-container .custom-modal label {
+  font-size: 0.9rem;
+}
+/* Add to admindashboard.css */
+
+.sidebar-toggle {
+  display: none;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .admin-dashboard-container {
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+  }
+
+  .admin-dashboard-container ul {
+    padding-left: 0;
+  }
+}
+

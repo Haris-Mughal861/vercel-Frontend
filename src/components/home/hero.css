@@ -1,0 +1,88 @@
+.hero_main {
+  background-image: url('../../assets/hero_banner.jpg');
+  height: 550px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero_backdrop {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 10;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.hero_heading {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: 600;
+  font-size: 2.8rem;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.hero_subheading {
+  color: white;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+  .hero_heading {
+    font-size: 2rem;
+  }
+
+  .hero_subheading {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_heading {
+    font-size: 1.6rem;
+  }
+
+  .hero_subheading {
+    font-size: 0.9rem;
+  }
+}
+
+.hero_buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shop-link,
+.member-link {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.shop-link:hover,
+.member-link:hover {
+  background-color: #333;
+  color: white;
+}

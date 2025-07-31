@@ -1,0 +1,14 @@
+.checkout_container {
+  padding: 2rem;
+}
+
+.checkout_item {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.checkout_total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
