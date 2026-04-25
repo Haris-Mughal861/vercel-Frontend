@@ -5,6 +5,7 @@ import apis from '../utils/apis';
 import httpAction from '../utils/httpAction';
 import useProvideHooks from '../hooks/useProvideHooks';
 import { useNavigate } from 'react-router-dom';
+import { IMAGE_BASE_URL } from '../utils/constants';
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -29,7 +30,7 @@ const Blog = () => {
         {blogs.map((blog) => (
           <div key={blog._id} className="blog_card">
             <img
-              src={`http://localhost:5052/images/${blog.image}`}
+              src={`${IMAGE_BASE_URL}${blog.image}`}
               alt={blog.title}
               className="blog_image"
             />

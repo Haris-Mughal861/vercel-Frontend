@@ -10,6 +10,7 @@ import apis from '../../utils/apis';
 import httpAction from '../../utils/httpAction';
 import { cartActions } from '../../store/userCart-slice';
 import { authActions } from '../../store/auth-slice';
+import { IMAGE_BASE_URL } from '../../utils/constants';
 
 const Header = () => {
   const [openCart, setOpenCart] = useState(false);
@@ -160,7 +161,7 @@ const Header = () => {
               cart.map((item, index) => (
                 <div key={index} className="cart_item">
                   <img
-                    src={item.product?.image?.length ? `http://localhost:5052/images/${item.product.image[0]}` : '/fallback.jpg'}
+                    src={item.product?.image?.length ? `${IMAGE_BASE_URL}${item.product.image[0]}` : '/fallback.jpg'}
                     alt={item.product?.title || 'Product Image'}
                   />
                   <div className="cart_item_detail">

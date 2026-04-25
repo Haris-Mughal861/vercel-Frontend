@@ -5,6 +5,7 @@ import apis from '../../utils/apis';
 import httpAction from '../../utils/httpAction';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { IMAGE_BASE_URL } from '../../utils/constants';
 import './banner.css';
 
 const Banner = () => {
@@ -43,7 +44,7 @@ const Banner = () => {
             <div
               className="banner_background"
               style={{
-                backgroundImage: `url(http://localhost:5052/images/${banner.image})`,
+                backgroundImage: `url(${IMAGE_BASE_URL}${banner.image})`,
               }}
             >
               <div className="banner_overlay">

@@ -4,6 +4,7 @@ import httpAction from '../utils/httpAction';
 import apis from '../utils/apis';
 import useProvideHooks from '../hooks/useProvideHooks';
 import toast from 'react-hot-toast';
+import { IMAGE_BASE_URL } from '../utils/constants';
 
 const SellerBlogs = () => {
   const { dispatch } = useProvideHooks();
@@ -45,7 +46,7 @@ const SellerBlogs = () => {
       ) : (
         <Paper elevation={3} sx={{ padding: 3 }}>
           <img
-            src={`http://localhost:5052/images/${blog.image}`}
+            src={`${IMAGE_BASE_URL}${blog.image}`}
             alt={blog.title}
             style={{ width: '100%', height: 'auto', marginBottom: '1rem' }}
           />

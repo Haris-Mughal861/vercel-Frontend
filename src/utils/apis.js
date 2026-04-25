@@ -1,5 +1,5 @@
 const apis = () => {
-  const local = 'http://localhost:5052';
+  const local = process.env.REACT_APP_API_URL || 'http://localhost:5052';
 
   return {
     // ==== USER ====

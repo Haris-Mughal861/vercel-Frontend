@@ -4,6 +4,7 @@ import httpAction from '../utils/httpAction';
 import apis from '../utils/apis';
 import { Typography, Paper } from '@mui/material';
 import useProvideHooks from '../hooks/useProvideHooks';
+import { IMAGE_BASE_URL } from '../utils/constants';
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const BlogDetail = () => {
   return (
     <Paper elevation={3} sx={{ padding: 3, maxWidth: 800, margin: '2rem auto' }}>
       <img
-        src={`http://localhost:5052/images/${blog.image}`}
+        src={`${IMAGE_BASE_URL}${blog.image}`}
         alt={blog.title}
         style={{ width: '100%', marginBottom: '1rem' }}
       />

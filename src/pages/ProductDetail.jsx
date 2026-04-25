@@ -8,6 +8,7 @@ import useProvideHooks from '../hooks/useProvideHooks';
 import httpAction from '../utils/httpAction';
 import apis from '../utils/apis';
 import toast from 'react-hot-toast';
+import { IMAGE_BASE_URL } from '../utils/constants';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -73,7 +74,7 @@ const ProductDetail = () => {
       <div className="product-detail-main">
         <div className="product-image-wrapper">
           <img
-            src={`http://localhost:5052/images/${product.image[imageIndex]}`}
+            src={`${IMAGE_BASE_URL}${product.image[imageIndex]}`}
             alt={product.title}
           />
 
@@ -139,7 +140,7 @@ const ProductDetail = () => {
                 onClick={() => navigate(`/product/${rec._id}`)}
               >
                 <img
-                  src={`http://localhost:5052/images/${rec.image[0]}`}
+                  src={`${IMAGE_BASE_URL}${rec.image[0]}`}
                   alt={rec.title}
                 />
                 <Typography variant="body2">{rec.title}</Typography>
