@@ -21,7 +21,7 @@ const SellerBlogs = () => {
     if (!window.confirm("Are you sure you want to delete this blog?")) return;
 
     const res = await dispatch(httpAction({
-      url: apis().deleteBlog(blog._id),
+      url: apis().deleteSellerBlog(blog._id),
       method: 'DELETE'
     }));
 
