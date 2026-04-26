@@ -1,12 +1,12 @@
 .banner_slider_wrapper {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: clamp(1rem, 3vw, 3rem) auto;
   position: relative;
 }
 
 .banner_slide {
    position: relative;
-  height: 400px;
+  height: clamp(240px, 45vw, 400px);
   overflow: hidden;
   border-radius: 12px;
 }
@@ -25,7 +25,7 @@
 .banner_overlay {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
   height: 100%;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +61,17 @@
 
 .banner_button:hover {
   background-color: #e64a19 !important;
+}
+
+@media (max-width: 768px) {
+  .banner_slide,
+  .banner_background {
+    border-radius: 10px;
+  }
+
+  .banner_content_new p {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Dots styling */

@@ -22,7 +22,7 @@ const BlogDetail = () => {
   if (!blog) return <Typography>Loading blog...</Typography>;
 
   return (
-    <Paper elevation={3} sx={{ padding: 3, maxWidth: 800, margin: '2rem auto' }}>
+    <Paper elevation={3} sx={{ p: { xs: 1.5, sm: 2, md: 3 }, maxWidth: 800, margin: '1rem auto' }}>
       <img
         src={resolveImageUrl(blog.image)}
         alt={blog.title}

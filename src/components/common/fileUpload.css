@@ -5,7 +5,7 @@
     align-items: center;
     gap: 1.5rem;
     width: 100%;
-    padding: 2rem 1rem;
+    padding: clamp(1rem, 2.5vw, 2rem) 1rem;
   }
   
   
@@ -20,7 +20,7 @@
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    width: 300px;
+    width: min(300px, 100%);
     text-align: center;
   }
   
@@ -94,6 +94,13 @@
   .single_image_remove:hover {
     background-color: rgba(255, 0, 0, 0.8);
     color: #fff;
+  }
+
+  @media (max-width: 600px) {
+    .single_preview {
+      width: 84px;
+      height: 84px;
+    }
   }
   
   

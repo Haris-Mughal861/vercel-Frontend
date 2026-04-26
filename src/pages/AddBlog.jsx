@@ -67,7 +67,7 @@ const AddBlog = () => {
   };
 
   return (
-    <Paper elevation={3} sx={{ padding: 3, maxWidth: 600, margin: '2rem auto' }}>
+    <Paper elevation={3} sx={{ p: { xs: 1.5, sm: 2, md: 3 }, maxWidth: 700, margin: '1rem auto' }}>
       {blogExists ? (
         <>
           <Typography variant="h5" mb={2}>You have already created a blog</Typography>
@@ -86,6 +86,7 @@ const AddBlog = () => {
               label="Title"
               name="title"
               fullWidth
+              size="small"
               value={form.title}
               onChange={handleChange}
               sx={{ mb: 2 }}
@@ -94,6 +95,7 @@ const AddBlog = () => {
               label="Summary"
               name="summary"
               fullWidth
+              size="small"
               value={form.summary}
               onChange={handleChange}
               sx={{ mb: 2 }}
@@ -102,6 +104,7 @@ const AddBlog = () => {
               label="Content"
               name="content"
               fullWidth
+              size="small"
               multiline
               minRows={4}
               value={form.content}

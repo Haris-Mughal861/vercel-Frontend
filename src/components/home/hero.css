@@ -1,6 +1,6 @@
 .hero_main {
   background-image: url('../../assets/hero_banner.jpg');
-  height: 550px;
+  min-height: clamp(360px, 62vh, 560px);
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -49,6 +49,10 @@
 
   .hero_subheading {
     font-size: 1rem;
+  }
+
+  .hero_backdrop {
+    padding: 0 18px;
   }
 }
 

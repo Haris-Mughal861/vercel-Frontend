@@ -38,13 +38,13 @@ const SellerBlogs = () => {
   }, [fetchSellerBlog]);
 
   return (
-    <div style={{ maxWidth: 800, margin: '2rem auto' }}>
+    <div style={{ maxWidth: 800, margin: '1rem auto' }}>
       <Typography variant="h4" gutterBottom>My Blog</Typography>
 
       {!blog ? (
         <Typography>No blog found. You can add one from the sidebar.</Typography>
       ) : (
-        <Paper elevation={3} sx={{ padding: 3 }}>
+        <Paper elevation={3} sx={{ p: { xs: 1.5, sm: 2, md: 3 } }}>
           <img
             src={resolveImageUrl(blog.image)}
             alt={blog.title}

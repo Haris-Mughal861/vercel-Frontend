@@ -1,4 +1,3 @@
-// src/pages/ForgotPassword.jsx
 import React, { useState } from 'react';
 import { Paper, Typography, TextField, Button } from '@mui/material';
 import { Formik, Form } from 'formik';
@@ -28,7 +27,6 @@ const ForgotPassword = () => {
   };
 
   const resetPassword = async (values) => {
-    console.log("🧪 Reset request:", values);
     const data = {
       url: apis().userResetPassword, 
       method: 'POST',
@@ -58,7 +56,6 @@ const ForgotPassword = () => {
             password: codeSent ? Yup.string().min(6, 'Min 6 characters').required('Required') : Yup.string()
           })}
           onSubmit={(values) => {
-            console.log("📤 Form submitted with:", values);
             if (!codeSent) {
               sendCode(values.email);
             } else {

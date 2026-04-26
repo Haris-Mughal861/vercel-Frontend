@@ -3,17 +3,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  height: 100vh;
+  padding: clamp(12px, 3vw, 24px);
+  min-height: 100vh;
   background-color: #f8f9fa;
 }
 
 .seller-register-card {
-  max-width: 420px;
+  max-width: 460px;
   width: 100%;
-  padding: 2rem;
+  padding: clamp(1rem, 2.2vw, 2rem);
   border-radius: 12px;
   background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .seller-register-title {
@@ -26,15 +27,4 @@
 .seller-register-form {
   display: flex;
   flex-direction: column;
-}
-@media (max-width: 480px) {
-  .auth_card {
-    padding: 1rem;
-  }
-  .auth_header h5 {
-    font-size: 1.3rem;
-  }
-  .auth_options {
-    font-size: 0.9rem;
-  }
 }
