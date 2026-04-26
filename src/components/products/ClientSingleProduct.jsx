@@ -14,7 +14,7 @@ import useProvideHooks from '../../hooks/useProvideHooks';
 import httpAction from '../../utils/httpAction';
 import apis from "../../utils/apis";
 import toast from 'react-hot-toast';
-import { IMAGE_BASE_URL } from '../../utils/constants';
+import { resolveImageUrl } from '../../utils/imageUrl';
 
 const isLightColor = (color) => {
   const lightColors = ['white', 'snow', 'ivory', 'beige', 'floralwhite', 'ghostwhite', 'honeydew', 'mintcream'];
@@ -83,7 +83,7 @@ const ClientSingleProduct = ({ item }) => {
           {item?.image?.length > 0 ? (
             <>
               <img
-                src={`${IMAGE_BASE_URL}${item.image[currentImageIndex]}`}
+                src={resolveImageUrl(item.image[currentImageIndex])}
                 alt={item.title}
                 onError={(e) => { e.target.src = "/images/fallback-image.jpg" }}
               />

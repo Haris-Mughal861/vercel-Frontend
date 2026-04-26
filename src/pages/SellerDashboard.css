@@ -1,6 +1,7 @@
 .seller_dashboard_main {
-  padding: 2rem;
+  padding: clamp(0.75rem, 2vw, 2rem);
   background-color: #f9f9f9;
+  border-radius: 10px;
 }
 
 .dashboard_stats {
@@ -33,7 +34,7 @@
 
 .dashboard_product_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
@@ -62,6 +63,9 @@
 
 .dashboard_product_info {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .dashboard_product_info h4 {
@@ -81,4 +85,25 @@
 
 .delete_btn:hover {
   background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+  .dashboard_stats {
+    gap: 0.75rem;
+  }
+
+  .stat_card {
+    padding: 1rem;
+  }
+
+  .stat_card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard_product_grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }

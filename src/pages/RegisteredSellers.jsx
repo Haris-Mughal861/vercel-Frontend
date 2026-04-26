@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import {
   Table, TableHead, TableRow, TableCell, TableBody,
-  Paper, Typography, Button
+  Paper, Typography, Button, TableContainer
 } from '@mui/material';
 import httpAction from '../utils/httpAction';
 import apis from '../utils/apis';
@@ -39,40 +39,43 @@ const RegisteredSellers = () => {
   };
 
   return (
-    <Paper sx={{ padding: 3 }}>
+    <Paper sx={{ padding: { xs: 1.5, sm: 2, md: 3 }, overflow: 'hidden' }}>
       <Typography variant="h5" gutterBottom>Registered Sellers</Typography>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell><strong>Name</strong></TableCell>
-            <TableCell><strong>Email</strong></TableCell>
-            <TableCell><strong>Phone</strong></TableCell>
-            <TableCell><strong>Shop Name</strong></TableCell>
-            <TableCell><strong>Status</strong></TableCell>
-            <TableCell><strong>Action</strong></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {sellers.map((seller) => (
-            <TableRow key={seller._id}>
-              <TableCell>{seller.name}</TableCell>
-              <TableCell>{seller.email}</TableCell>
-              <TableCell>{seller.phone || 'N/A'}</TableCell>
-              <TableCell>{seller.shopName || 'N/A'}</TableCell>
-              <TableCell>{seller.status || 'Active'}</TableCell>
-              <TableCell>
-                <Button
-                  variant="contained"
-                  color={seller.status === 'Blocked' ? 'success' : 'error'}
-                  onClick={() => handleBlockSeller(seller._id)}
-                >
-                  {seller.status === 'Blocked' ? 'Unblock' : 'Block'}
-                </Button>
-              </TableCell>
+      <TableContainer sx={{ overflowX: 'auto' }}>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell><strong>Name</strong></TableCell>
+              <TableCell><strong>Email</strong></TableCell>
+              <TableCell><strong>Phone</strong></TableCell>
+              <TableCell><strong>Shop Name</strong></TableCell>
+              <TableCell><strong>Status</strong></TableCell>
+              <TableCell><strong>Action</strong></TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHead>
+          <TableBody>
+            {sellers.map((seller) => (
+              <TableRow key={seller._id}>
+                <TableCell sx={{ whiteSpace: 'nowrap' }}>{seller.name}</TableCell>
+                <TableCell sx={{ minWidth: 220 }}>{seller.email}</TableCell>
+                <TableCell>{seller.phone || 'N/A'}</TableCell>
+                <TableCell>{seller.shopName || 'N/A'}</TableCell>
+                <TableCell>{seller.status || 'Active'}</TableCell>
+                <TableCell>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    color={seller.status === 'Blocked' ? 'success' : 'error'}
+                    onClick={() => handleBlockSeller(seller._id)}
+                  >
+                    {seller.status === 'Blocked' ? 'Unblock' : 'Block'}
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Paper>
   );
 };

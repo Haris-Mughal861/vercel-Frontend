@@ -125,9 +125,11 @@ const SellerLayout = () => {
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
+          p: { xs: 1.5, sm: 2, md: 3 },
           mt: '64px',
           ml: isMobile ? 0 : `${drawerWidth}px`,
+          width: '100%',
+          minWidth: 0,
         }}
       >
         <Outlet />

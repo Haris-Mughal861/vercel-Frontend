@@ -5,8 +5,17 @@
 }
 
 
+:root {
+    --container-max: 1200px;
+    --page-padding-x: clamp(12px, 2.5vw, 28px);
+    --page-padding-y: clamp(16px, 2.2vw, 32px);
+}
+
 body{
     font-family: sans-serif;
+    background-color: #f7f8fb;
+    color: #1d1d1f;
+    line-height: 1.45;
 }
 
 input,button,textarea,select{
@@ -16,4 +25,8 @@ input,button,textarea,select{
 img{
     display: block;
     max-width: 100%;
+}
+
+a {
+    color: inherit;
 }

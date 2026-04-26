@@ -18,7 +18,7 @@ import apis from '../utils/apis';
 import httpAction from '../utils/httpAction';
 import { cartActions } from '../store/userCart-slice';
 import toast from 'react-hot-toast';
-import { IMAGE_BASE_URL } from '../utils/constants';
+import { resolveImageUrl } from '../utils/imageUrl';
 import './checkout.css';
 
 const CheckoutPage = () => {
@@ -128,7 +128,7 @@ const CheckoutPage = () => {
                     <ListItem key={index} divider>
                       <Box display="flex" alignItems="center" width="100%" gap={2}>
                         <img
-                          src={`${IMAGE_BASE_URL}${item.product.image?.[0]}`}
+                          src={resolveImageUrl(item.product.image?.[0])}
                           alt={item.product.title}
                           style={{ width: 60, height: 60, objectFit: 'cover' }}
                         />

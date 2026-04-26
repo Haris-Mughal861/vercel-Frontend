@@ -74,7 +74,7 @@ const AdminDashboard = () => {
         <li>🖼️ <a href="/admin/banner-editor">Edit Homepage Banner</a></li>
       </ul>
 
-      <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+      <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         <Button variant="outlined" onClick={() => openModal('brand')}>
           ➕ Add Brand
         </Button>

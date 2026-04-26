@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import useProvideHooks from '../hooks/useProvideHooks';
 import apis from '../utils/apis';
 import httpAction from '../utils/httpAction';
-import { IMAGE_BASE_URL } from '../utils/constants';
+import { resolveImageUrl } from '../utils/imageUrl';
 import './SellerDashboard.css';
 
 const SellerDashboard = () => {
@@ -61,7 +61,7 @@ const SellerDashboard = () => {
         {products.map((product) => (
           <div key={product._id} className="dashboard_product_card">
             <img
-              src={`${IMAGE_BASE_URL}${product.image?.[0]}`}
+              src={resolveImageUrl(product.image?.[0])}
               alt={product.title}
               className="dashboard_product_image"
             />

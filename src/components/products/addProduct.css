@@ -19,7 +19,17 @@
 
 }
 .add_product_main{
-    padding: 2rem;
+    padding: clamp(0.75rem, 2vw, 2rem);
 
 
+}
+
+@media (max-width: 768px) {
+    .add_product_actions {
+        justify-content: stretch;
+    }
+
+    .add_product_actions .MuiButton-root {
+        width: 100%;
+    }
 }
