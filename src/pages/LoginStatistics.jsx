@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   Table, TableHead, TableRow, TableCell, TableBody,
   Paper, Typography
@@ -12,7 +12,7 @@ const LoginStatistics = () => {
   const { dispatch } = useProvideHooks();
   const [logins, setLogins] = useState([]);
 
-  const fetchLogins = async () => {
+  const fetchLogins = useCallback(async () => {
     const data = { url: apis().allLogins };
     const result = await dispatch(httpAction(data));
     if (result?.status) {
@@ -21,11 +21,11 @@ const LoginStatistics = () => {
     } else {
       toast.error('Failed to fetch login stats');
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchLogins();
-  }, [dispatch]);
+  }, [fetchLogins]);
 
   return (
     <Paper sx={{ padding: 3 }}>

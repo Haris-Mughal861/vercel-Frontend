@@ -26,10 +26,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Follow Us</h3>
           <div className="footer-icons">
-            <a href="javascript:void(0)"><Facebook /></a>
-            <a href="javascript:void(0)"><Twitter /></a>
-            <a href="javascript:void(0)"><Instagram /></a>
-            <a href="javascript:void(0)"><LinkedIn /></a>
+            <button aria-label="Facebook"><Facebook /></button>
+            <button aria-label="Twitter"><Twitter /></button>
+            <button aria-label="Instagram"><Instagram /></button>
+            <button aria-label="LinkedIn"><LinkedIn /></button>
           </div>
         </div>
       </div>

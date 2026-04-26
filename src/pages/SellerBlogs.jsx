@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Typography, Button, Paper } from '@mui/material';
 import httpAction from '../utils/httpAction';
 import apis from '../utils/apis';
@@ -10,12 +10,12 @@ const SellerBlogs = () => {
   const { dispatch } = useProvideHooks();
   const [blog, setBlog] = useState(null);
 
-  const fetchSellerBlog = async () => {
+  const fetchSellerBlog = useCallback(async () => {
     const res = await dispatch(httpAction({ url: apis().getMyBlog }));
     if (res?.exists) {
       setBlog(res.blog);
     }
-  };
+  }, [dispatch]);
 
   const handleDelete = async () => {
     if (!window.confirm("Are you sure you want to delete this blog?")) return;
@@ -35,7 +35,7 @@ const SellerBlogs = () => {
 
   useEffect(() => {
     fetchSellerBlog();
-  }, [dispatch]);
+  }, [fetchSellerBlog]);
 
   return (
     <div style={{ maxWidth: 800, margin: '2rem auto' }}>

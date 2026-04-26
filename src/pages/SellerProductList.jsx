@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './SellerDashboard.css';
 import useProvideHooks from '../hooks/useProvideHooks';
 import { IMAGE_BASE_URL } from '../utils/constants';
@@ -9,7 +9,7 @@ const SellerDashboard = () => {
   const { dispatch } = useProvideHooks();
   const [products, setProducts] = useState([]);
 
-  const fetchSellerProducts = async () => {
+  const fetchSellerProducts = useCallback(async () => {
     const data = { url: apis().sellerDashboard };
     const result = await dispatch(httpAction(data));
 
@@ -17,7 +17,7 @@ const SellerDashboard = () => {
     if (result?.status) {
       setProducts(result.products);
     }
-  };
+  }, [dispatch]);
 
   const deleteProduct = async (productId) => {
     const data = {
@@ -39,7 +39,7 @@ const SellerDashboard = () => {
 
   useEffect(() => {
     fetchSellerProducts();
-  }, [dispatch]);
+  }, [fetchSellerProducts]);
 
   return (
     <div className="seller_dashboard_main">

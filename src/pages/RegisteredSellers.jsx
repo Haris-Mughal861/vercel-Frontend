@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   Table, TableHead, TableRow, TableCell, TableBody,
   Paper, Typography, Button
@@ -12,17 +12,17 @@ const RegisteredSellers = () => {
   const { dispatch } = useProvideHooks();
   const [sellers, setSellers] = useState([]);
 
-  const fetchSellers = async () => {
+  const fetchSellers = useCallback(async () => {
     const data = { url: apis().allSellers };
     const result = await dispatch(httpAction(data));
     if (result?.status) {
       setSellers(result.sellers);
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchSellers();
-  }, [dispatch]);
+  }, [fetchSellers]);
 
   const handleBlockSeller = async (sellerId) => {
     const data = {

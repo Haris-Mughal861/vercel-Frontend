@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Typography,
@@ -101,16 +101,16 @@ const CheckoutPage = () => {
     }
   };
 
-  const fetchCart = async () => {
+  const fetchCart = useCallback(async () => {
     const result = await dispatch(httpAction({ url: apis().getUserCart }));
     if (result?.status) {
       dispatch(cartActions.updateCart({ cart: result.cart, total: result.grandTotal }));
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchCart();
-  }, [dispatch]);
+  }, [fetchCart]);
 
   return (
     <Box className="checkout-container" sx={{ p: 3 }}>

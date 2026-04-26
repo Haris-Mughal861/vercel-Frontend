@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './blog.css';
 import { Typography, Button } from '@mui/material';
 import apis from '../utils/apis';
@@ -12,16 +12,16 @@ const Blog = () => {
   const { dispatch } = useProvideHooks();
   const navigate = useNavigate();
 
-  const fetchBlogs = async () => {
+  const fetchBlogs = useCallback(async () => {
     const res = await dispatch(httpAction({ url: apis().getBlogs }));
     if (res?.status) {
       setBlogs(res.blogs);
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchBlogs();
-  }, [dispatch]);
+  }, [fetchBlogs]);
 
   return (
     <div className="blog_page">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import useProvideHooks from '../hooks/useProvideHooks';
 import apis from '../utils/apis';
 import httpAction from '../utils/httpAction';
@@ -9,11 +9,11 @@ const SellerDashboard = () => {
   const { dispatch } = useProvideHooks();
   const [products, setProducts] = useState([]);
 
-  const fetchSellerProducts = async () => {
+  const fetchSellerProducts = useCallback(async () => {
     const data = { url: apis().sellerDashboard };
     const result = await dispatch(httpAction(data));
     if (result?.status) setProducts(result.products);
-  };
+  }, [dispatch]);
 
   const deleteProduct = async (productId) => {
     const data = {
@@ -31,7 +31,7 @@ const SellerDashboard = () => {
 
   useEffect(() => {
     fetchSellerProducts();
-  }, [dispatch]);
+  }, [fetchSellerProducts]);
 
   const totalProducts = products.length;
   const totalStock = products.reduce((sum, p) => sum + (p.stock || 0), 0);
