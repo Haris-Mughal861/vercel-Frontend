@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Box, CssBaseline, Drawer, IconButton,
+  Box, CssBaseline, Drawer,
   List, ListItem, ListItemIcon, ListItemText,
   Typography, useMediaQuery, Divider, Fab, ListItemButton
 } from '@mui/material';

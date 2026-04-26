@@ -90,7 +90,7 @@ const AddSellerProduct = () => {
     };
 
     getDropdowns();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="add_product_main">

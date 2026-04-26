@@ -39,7 +39,7 @@ const SellerDashboard = () => {
 
   useEffect(() => {
     fetchSellerProducts();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="seller_dashboard_main">

@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import {Modal} from "react-bootstrap"
 const CustomModel = ({show,onClose, title, children}) => {
   return (

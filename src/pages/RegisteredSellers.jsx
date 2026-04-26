@@ -22,7 +22,7 @@ const RegisteredSellers = () => {
 
   useEffect(() => {
     fetchSellers();
-  }, []);
+  }, [dispatch]);
 
   const handleBlockSeller = async (sellerId) => {
     const data = {

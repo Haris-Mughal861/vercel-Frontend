@@ -105,7 +105,7 @@ const ClientSingleProduct = ({ item }) => {
               )}
             </>
           ) : (
-            <img src="/images/fallback-image.jpg" alt="No image" />
+            <img src="/images/fallback-image.jpg" alt="fallback image" />
           )}
         </div>
       </div>

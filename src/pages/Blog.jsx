@@ -21,7 +21,7 @@ const Blog = () => {
 
   useEffect(() => {
     fetchBlogs();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="blog_page">

@@ -31,7 +31,7 @@ const SellerDashboard = () => {
 
   useEffect(() => {
     fetchSellerProducts();
-  }, []);
+  }, [dispatch]);
 
   const totalProducts = products.length;
   const totalStock = products.reduce((sum, p) => sum + (p.stock || 0), 0);

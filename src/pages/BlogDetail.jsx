@@ -17,7 +17,7 @@ const BlogDetail = () => {
       if (res?.status) setBlog(res.blog);
     };
     fetchBlog();
-  }, [id]);
+  }, [id, dispatch]);
 
   if (!blog) return <Typography>Loading blog...</Typography>;
 

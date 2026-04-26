@@ -25,7 +25,7 @@ const LoginStatistics = () => {
 
   useEffect(() => {
     fetchLogins();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Paper sx={{ padding: 3 }}>

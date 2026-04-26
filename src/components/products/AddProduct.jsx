@@ -128,7 +128,7 @@ const AddProduct = () => {
     };
 
     getModelDropdown();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="add_product_main">

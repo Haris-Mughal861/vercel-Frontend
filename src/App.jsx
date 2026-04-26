@@ -5,7 +5,6 @@ import { Routes, Route } from 'react-router-dom';
 import AddProduct from "./components/products/AddProduct";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AdminProductList from "./components/products/AdminProductList";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import CheckoutPage from './pages/CheckoutPage';

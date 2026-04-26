@@ -35,7 +35,7 @@ const SellerBlogs = () => {
 
   useEffect(() => {
     fetchSellerBlog();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div style={{ maxWidth: 800, margin: '2rem auto' }}>

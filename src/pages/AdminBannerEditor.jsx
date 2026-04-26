@@ -6,7 +6,7 @@ import apis from '../utils/apis';
 import toast from 'react-hot-toast';
 
 const AdminBannerEditor = () => {
-  const [banner, setBanner] = useState(null);
+  const [_banner, setBanner] = useState(null);
   const [files, setFiles] = useState([]);
   const [formValues, setFormValues] = useState({
     title: '',

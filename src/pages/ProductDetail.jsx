@@ -27,7 +27,7 @@ const ProductDetail = () => {
       }
     };
     fetchProduct();
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     const fetchRecommendations = async () => {
@@ -38,7 +38,7 @@ const ProductDetail = () => {
     };
 
     if (product) fetchRecommendations();
-  }, [product]);
+  }, [product, dispatch, id]);
 
   const addToCart = async () => {
     if (!authSlice.isAuth) return navigate("/login");

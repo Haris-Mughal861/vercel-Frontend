@@ -110,7 +110,7 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     fetchCart();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box className="checkout-container" sx={{ p: 3 }}>
