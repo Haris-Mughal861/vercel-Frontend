@@ -42,8 +42,13 @@ function Login() {
     if (result?.status) {
       toast.success(result?.message);
 
-      if (result?.accessToken) {
-        localStorage.setItem("token", result.accessToken);
+      const resolvedAccessToken =
+        result?.accessToken ||
+        result?.token?.accessToken ||
+        (typeof result?.token === "string" ? result.token : "");
+
+      if (resolvedAccessToken) {
+        localStorage.setItem("token", resolvedAccessToken);
       }
       localStorage.setItem("role", result?.user?.role);
       localStorage.setItem("userId", result?.user?.userId);
