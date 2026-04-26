@@ -3,6 +3,16 @@ import toast from "react-hot-toast";
 const httpAction = (data) => async () => {
   try {
     const isForm = data.isFormData === true;
+    const token = localStorage.getItem("token");
+    const headers = {};
+
+    if (!isForm) {
+      headers["Content-Type"] = "application/json";
+    }
+
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
+    }
 
     const response = await fetch(data.url, {
       method: data.method || "GET",
@@ -11,12 +21,7 @@ const httpAction = (data) => async () => {
         : data.body
         ? JSON.stringify(data.body)
         : null,
-      headers: isForm
-        ? {}
-        : {
-            "Content-Type": "application/json",
-            Authorization: localStorage.getItem("token") || "",
-          },
+      headers,
       credentials: "include",
     });
 

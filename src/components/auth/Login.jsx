@@ -42,6 +42,9 @@ function Login() {
     if (result?.status) {
       toast.success(result?.message);
 
+      if (result?.accessToken) {
+        localStorage.setItem("token", result.accessToken);
+      }
       localStorage.setItem("role", result?.user?.role);
       localStorage.setItem("userId", result?.user?.userId);
       localStorage.setItem("email", result?.user?.email);
